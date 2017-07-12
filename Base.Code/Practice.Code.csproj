@@ -63,6 +63,7 @@
     <Compile Include="Configs\Configs.cs" />
     <Compile Include="Configs\DBConnection.cs" />
     <Compile Include="Excel\NPOIExcel.cs" />
+    <Compile Include="Extend\Ext.Convert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="security\DESEncrypt.cs" />
   </ItemGroup>
