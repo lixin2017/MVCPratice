@@ -104,6 +104,30 @@ namespace Base.Code
 
         #endregion 数值转换
 
+        #region 日期转换
+        //转换为日期
+        public static DateTime ToDate(this object data)
+        {
+            if (data == null)
+                return DateTime.MinValue;
+            DateTime result;
+            return DateTime.TryParse(data.ToString(), out result) ? result : DateTime.MinValue;
+        }
 
+        //转换为可空日期
+        public static DateTime? ToDateOrNull(this object data)
+        {
+            if (data == null)
+                return null;
+            DateTime result;
+            bool isValid = DateTime.TryParse(data.ToString(), out result);
+            if (isValid)
+                return result;
+            return null;
+        }
+
+        #endregion 日期转换
+
+        
     }
 }
