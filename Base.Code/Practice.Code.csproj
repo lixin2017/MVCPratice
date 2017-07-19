@@ -64,12 +64,9 @@
     <Compile Include="Configs\DBConnection.cs" />
     <Compile Include="Excel\NPOIExcel.cs" />
     <Compile Include="Extend\Ext.Convert.cs" />
-<<<<<<< HEAD
-    <Compile Include="File\FileHelper.cs" />
-=======
+    <Compile Include="Extend\Ext.DateTime.cs" />
     <Compile Include="File\FileDownHelper.cs" />
     <Compile Include="Json\Json.cs" />
->>>>>>> d743eb839c5dcaed1b449fffc11dae6b491c182d
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="security\DESEncrypt.cs" />
   </ItemGroup>

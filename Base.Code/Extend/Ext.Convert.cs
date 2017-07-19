@@ -128,6 +128,103 @@ namespace Base.Code
 
         #endregion 日期转换
 
-        
+        #region 布尔转换
+        //转换为布尔值
+        public static bool ToBool(this object data)
+        {
+            if (data == null)
+                return false;
+            bool? value = GetBool(data);
+            if (value != null)
+                return value.Value;
+            bool result;
+            return bool.TryParse(data.ToString(), out result) && result;
+        }
+
+        //获取布尔值
+        private static bool? GetBool(this object data)
+        {
+            switch (data.ToString().Trim().ToLower())
+            {
+                case "0":
+                    return false;
+                case "1":
+                    return true;
+                case "是":
+                    return true;
+                case "否":
+                    return false;
+                case "yes":
+                    return true;
+                case "no":
+                    return false;
+                default:
+                    return null;
+            }
+        }
+
+        //转化为可空布尔值
+        public static bool? ToBoolOrNull(this object data)
+        {
+            if (data == null)
+                return null;
+            bool? value = GetBool(data);
+            if (value != null)
+                return value.Value;
+            bool result;
+            bool IsValid= bool.TryParse(data.ToString(),out result);
+            if (IsValid)
+                return result;
+            return null;
+        }
+
+        #endregion 布尔转换
+
+        #region 字符串转换
+
+        public static string ToString(this object data)
+        {
+            return data == null ? string.Empty : data.ToString().Trim();
+        }
+
+        #endregion 字符串转换
+
+        //安全返回值
+        public static T SafeValue<T>(this T? value) where T : struct
+        {
+            return value ?? default(T);
+        }
+
+        //是否为空
+        public static bool IsEmpty(this string value)
+        {
+            return string.IsNullOrWhiteSpace(value);
+        }
+
+        public static bool IsEmpty(this Guid? value)
+        {
+            if (value == null)
+                return true;
+            return IsEmpty(value.Value);
+        }
+
+        public static bool IsEmpty(this Guid value)
+        {
+            if (value == Guid.Empty)
+                return true;
+            return false;
+        }
+
+        public static bool IsEmpty(this object value)
+        {
+            if (value != null && !string.IsNullOrEmpty(value.ToString()))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
