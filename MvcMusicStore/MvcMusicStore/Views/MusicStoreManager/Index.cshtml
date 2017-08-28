@@ -77,6 +77,26 @@
         new {@class="btn btn-primary"})
 </div>
 
+<div class="panel panel-default">
+    <div class="panel-heading">Artist search</div>
+    <div class="panel-body">
+        @using(Ajax.BeginForm("ArtistSearch","MusicStoreManager",
+            new AjaxOptions
+            {
+                InsertionMode =InsertionMode.Replace,
+                HttpMethod="GET",
+                OnFailure="searchFailed",
+                LoadingElementId="ajax-loader",
+                UpdateTargetId="searchresults",
+            }))
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="search" />  
+            <img id="ajax-loader" src="~/Content/piclist13.jpg" />          
+        }
+        <div id="searchresults"></div>
+    </div>
+</div>
 @section Scripts{
     <script src="~/Scripts/MusicStore/MusicScripts.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
