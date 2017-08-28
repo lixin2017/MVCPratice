@@ -1,10 +1,18 @@
 ﻿@model IEnumerable<MvcMusicStore.Models.Album>
 
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+    <input type="text" name="q" />
+    <input type="submit" value="Search" />
+}
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -55,3 +63,23 @@
 }
 
 </table>
+
+<div id="dailydeal">
+    @Ajax.ActionLink("Click here to see today's special!",
+        "DailyDeal",
+        null,
+        new AjaxOptions
+        {
+            UpdateTargetId="dailydeal",
+            InsertionMode=InsertionMode.Replace,
+            HttpMethod="GET"
+        },
+        new {@class="btn btn-primary"})
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/MusicStore/MusicScripts.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
+
+
