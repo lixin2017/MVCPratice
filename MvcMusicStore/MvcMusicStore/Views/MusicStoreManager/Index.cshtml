@@ -76,7 +76,7 @@
         },
         new {@class="btn btn-primary"})
 </div>
-
+<div style="height:20px"></div>
 <div class="panel panel-default">
     <div class="panel-heading">Artist search</div>
     <div class="panel-body">
@@ -90,12 +90,20 @@
                 UpdateTargetId="searchresults",
             }))
         {
-            <input type="text" name="q" />
+            <input type="text" name="q" data-autocomplete-source="@Url.Action("QuickSearch","MusicStoreManager")" />
             <input type="submit" value="search" />  
             <img id="ajax-loader" src="~/Content/piclist13.jpg" />          
         }
         <div id="searchresults"></div>
     </div>
+</div>
+
+<div id="album-list" style="height:120px">
+    <img src="~/Content/piclist13.jpg" />
+    <img src="~/Content/piclist13.jpg" />
+    <img src="~/Content/piclist13.jpg" />
+    <img src="~/Content/piclist13.jpg" />
+    <img src="~/Content/piclist13.jpg" />
 </div>
 @section Scripts{
     <script src="~/Scripts/MusicStore/MusicScripts.js"></script>
