@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/Content/SinaNews/css/base.css" />
+    <script type="text/javascript" src="~/Content/SinaNews/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Content/SinaNews/js/sina_index.js"></script>
+    <title>新浪网仿写</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="header-top-left">
+                <div class="tn-tab">
+                    <a href=#>设为首页</a>
+                </div>
+                <div class="tn-tab">
+                    <a target="_blank" href="http://tech.sina.com.cn/z/sinawap/">手机新浪网</a>
+                </div>
+                <div class="tn-tab link-list">
+                    <a href=#>移动客户端</a>
+                    <i></i>
+                    <div class="tn-topmenulist">
+                        <ul class="tn-text-list">
+                            <li><a target="_blank" href="http://m.weibo.com/web/cellphone.php#iphone">新浪微博</a></li>
+                            <li><a target="_blank" href="http://m.sina.com.cn/m/sinahome.shtml">新浪新闻</a></li>
+                            <li><a target="_blank" href="http://m.sina.com.cn/m/sinasports.shtml">新浪体育</a></li>
+                            <li><a target="_blank" href="http://m.sina.com.cn/m/sinaent.shtml">新浪娱乐</a></li>
+                            <li><a target="_blank" href="http://finance.sina.com.cn/mobile/comfinanceweb.shtml">新浪财经</a></li>
+                            <li><a target="_blank" href="http://api.ggt.sina.com.cn/download/download.html">新浪港股通</a></li>
+                            <li><a target="_blank" href="http://blog.sina.com.cn/lm/z/app/">新浪博客</a></li>
+                            <li><a target="_blank" href="http://tianqitong.sina.cn/">天气通</a></li>
+                            <li><a target="_blank" href="http://games.sina.com.cn/o/kb/12392.shtml">新浪游戏</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-top-right">
+                <div class="tn-tab">
+                    <a href=#>登录</a>
+                </div>
+                <div class="tn-tab">
+                    <a target="_blank" href="http://weibo.com">微博</a>
+                </div>
+                <div class="tn-tab">
+                    <a target="_blank" href="http://login.sina.com.cn">博客</a>
+                </div>
+                <div class="tn-tab">
+                    <a target="_blank" href="http://mail.sina.com.cn">邮箱</a>
+                </div>
+                <div class="tn-tab">
+                    <a target="_blank" href="http://news.sina.com.cn/guide/">网站导航</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

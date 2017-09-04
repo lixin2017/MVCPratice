@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model PagedList.IPagedList<SinaNews.Models.News>
+@using PagedList.Mvc;
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<style>
+    em {
+        color: red;
+    }
+
+    tr:hover {
+        background: #eeeeee;
+    }
+</style>
+
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            标题
+        </th>
+        <th>
+            作者
+        </th>
+        <th>
+            时间
+        </th>
+        <th>
+            地址
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="search_field">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.time)
+            </td>
+            <td>
+                <a href="@item.PageUrl" target="_blank">@item.PageUrl</a>
+
+            </td>
+        </tr>
+    }
+
+</table>
+<p>每页 @Model.PageSize 条记录，共 @ViewBag.newsCount 条，共 @Model.PageCount 页，当前第 @Model.PageNumber 页></p>
+@{
+    var q="";
+    if (ViewBag.searchString != null && ViewBag.searchString != "")
+    {
+        q = ViewBag.searchString;
+    }
+    
+}
+@Html.PagedListPager(Model, page => Url.Action("SearchResult", new { page = page,q=q}))
+
+
+<script>
+    $(function () {
+        var searchString = "@ViewBag.searchString";
+        $('td.search_field').each(function () {
+            $(this).html($(this).text().replace(searchString, "<em>" + searchString + " " + "</em>"));
+        })
+    })
+</script>
