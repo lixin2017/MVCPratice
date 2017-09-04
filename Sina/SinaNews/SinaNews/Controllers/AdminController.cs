@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SinaNews.Models;
+using System.Configuration;
+using PagedList;
 
 namespace SinaNews.Controllers
 {
@@ -15,9 +17,14 @@ namespace SinaNews.Controllers
         private SinaNewsContext db = new SinaNewsContext();
 
         // GET: News
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.News.ToList());
+            var news = from s in db.News select s;
+            int pageNumber = page ?? 1;
+            int pageSize = int.Parse(ConfigurationManager.AppSettings["pageSize"]);
+            news = news.OrderBy(a => a.NewsId);
+            IPagedList<News> pagedlist = news.ToPagedList(pageNumber, pageSize);
+            return View(pagedlist);
         }
 
         // GET: News/Details/5
