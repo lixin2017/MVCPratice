@@ -12,7 +12,7 @@ namespace SinaNews.Models
         public int NewsId { get; set; }
         public string PageUrl { get; set; }
         [Required]
-        public DateTime time { get; set; }
+        public string time { get; set; }
         [Required]
         public string Title { get; set; }
         public string Content { get; set; }
