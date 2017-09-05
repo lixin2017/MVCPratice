@@ -10,11 +10,13 @@ using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
+    [Route("MusicStoreManager/{action}")]
     public class MusicStoreManagerController : Controller
     {
         private MusicStoreDB db = new MusicStoreDB();
 
         // GET: MusicStoreManager
+        
         public ActionResult Index()
         {
             var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);

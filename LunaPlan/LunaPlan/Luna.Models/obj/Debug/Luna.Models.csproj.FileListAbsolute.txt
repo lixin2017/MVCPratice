@@ -1,0 +1,10 @@
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\bin\Debug\Luna.Models.dll.config
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\bin\Debug\Luna.Models.dll
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\bin\Debug\Luna.Models.pdb
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\bin\Debug\EntityFramework.dll
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\bin\Debug\EntityFramework.SqlServer.dll
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\bin\Debug\EntityFramework.xml
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\bin\Debug\EntityFramework.SqlServer.xml
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\obj\Debug\Luna.Models.csprojResolveAssemblyReference.cache
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\obj\Debug\Luna.Models.dll
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.Models\obj\Debug\Luna.Models.pdb
