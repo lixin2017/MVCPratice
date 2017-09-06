@@ -1,7 +1,0 @@
-F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IBLL\bin\Debug\Luna.IBLL.dll
-F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IBLL\bin\Debug\Luna.IBLL.pdb
-F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IBLL\bin\Debug\Luna.Models.dll
-F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IBLL\bin\Debug\Luna.Models.pdb
-F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IBLL\obj\Debug\Luna.IBLL.csprojResolveAssemblyReference.cache
-F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IBLL\obj\Debug\Luna.IBLL.dll
-F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IBLL\obj\Debug\Luna.IBLL.pdb

@@ -1,0 +1,14 @@
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IDAL\bin\Debug\Luna.IDAL.dll
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IDAL\bin\Debug\Luna.IDAL.pdb
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IDAL\bin\Debug\Luna.Models.dll
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IDAL\bin\Debug\Luna.Models.pdb
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IDAL\obj\Debug\Luna.IDAL.csprojResolveAssemblyReference.cache
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IDAL\obj\Debug\Luna.IDAL.dll
+F:\Project\MVCPratice\LunaPlan\LunaPlan\Luna.IDAL\obj\Debug\Luna.IDAL.pdb
+F:\Project\MVCPratice\Luna\Luna\Luna.IDAL\bin\Debug\Luna.IDAL.dll
+F:\Project\MVCPratice\Luna\Luna\Luna.IDAL\bin\Debug\Luna.IDAL.pdb
+F:\Project\MVCPratice\Luna\Luna\Luna.IDAL\bin\Debug\Luna.Models.dll
+F:\Project\MVCPratice\Luna\Luna\Luna.IDAL\bin\Debug\Luna.Models.pdb
+F:\Project\MVCPratice\Luna\Luna\Luna.IDAL\obj\Debug\Luna.IDAL.csprojResolveAssemblyReference.cache
+F:\Project\MVCPratice\Luna\Luna\Luna.IDAL\obj\Debug\Luna.IDAL.dll
+F:\Project\MVCPratice\Luna\Luna\Luna.IDAL\obj\Debug\Luna.IDAL.pdb
