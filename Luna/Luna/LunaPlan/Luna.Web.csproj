@@ -156,6 +156,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Member\Controllers\HomeController.cs" />
     <Compile Include="Areas\Member\Controllers\UserController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
@@ -184,6 +185,10 @@
     <Content Include="Areas\Member\Views\Home\Index.cshtml" />
     <Content Include="Areas\Member\Views\User\Register.cshtml" />
     <Content Include="Areas\Member\Views\User\Login.cshtml" />
+    <Content Include="Areas\Member\Views\Shared\Menu.cshtml" />
+    <Content Include="Areas\Member\Views\User\Details.cshtml" />
+    <Content Include="Areas\Member\Views\Shared\UserGroup.cshtml" />
+    <Content Include="Views\Shared\LoginPartial.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

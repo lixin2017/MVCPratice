@@ -16,6 +16,7 @@ using Luna.IBLL;
 
 namespace Luna.Areas.Member.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
 
@@ -28,6 +29,7 @@ namespace Luna.Areas.Member.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult VerificationCode()
         {
             string verificationCode = Security.CreateVerificationText(6);
@@ -41,6 +43,7 @@ namespace Luna.Areas.Member.Controllers
         /// 注册
         /// </summary>
         /// <returns></returns>
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -48,6 +51,7 @@ namespace Luna.Areas.Member.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Register(RegisterViewModel register)
         {
             if (TempData["VerificationCode"] == null || TempData["VerificationCode"].ToString() != register.VerificationCode.ToUpper())
@@ -87,13 +91,16 @@ namespace Luna.Areas.Member.Controllers
             return View(register);
         }
 
+        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
         [ValidateAntiForgeryToken]
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Login(LoginModel loginModel)
         {
             if (ModelState.IsValid)
@@ -130,6 +137,41 @@ namespace Luna.Areas.Member.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return Redirect(Url.Content("~/"));
+        }
+
+        public ActionResult Menu()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Details()
+        {
+            return View(userService.Find(User.Identity.Name));
+        }
+
+        public ActionResult UserGroup()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Modify()
+        {
+            var _user = userService.Find(User.Identity.Name);
+            if (_user == null) ModelState.AddModelError("UserName", "用戶不存在");
+            else
+            {
+                if (TryUpdateModel(_user, new string[] { "DisplayName", "Email" }))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        if (userService.Update(_user)) ModelState.AddModelError("", "修改成功");
+                        else ModelState.AddModelError("", "无需要修改的资料");
+                    }
+                }
+                else ModelState.AddModelError("", "修改失败");
+            }
+            return View("Details", _user);
+
         }
     }
 }
