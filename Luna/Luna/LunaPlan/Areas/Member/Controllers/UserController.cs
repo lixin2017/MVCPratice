@@ -8,13 +8,19 @@ using System.Drawing;
 using Luna.BLL;
 using Luna.Areas.Member.Models;
 using Luna.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
+using Luna.IBLL;
+
+
 
 namespace Luna.Areas.Member.Controllers
 {
     public class UserController : Controller
     {
 
-        UserService userService = new UserService();
+        private InterfaceUserService userService;
+        public UserController() { userService = new UserService(); }
 
         // GET: Member/User
         public ActionResult Index()
@@ -70,13 +76,60 @@ namespace Luna.Areas.Member.Controllers
                     _user = userService.Add(_user);
                     if (_user.UserID > 0)
                     {
-                        return Content("注册成功！");
-                        //AuthenticationManager.SignIn();
+                        var _identity = userService.CreateIdentity(_user, DefaultAuthenticationTypes.ApplicationCookie);
+                        AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                        AuthenticationManager.SignIn(_identity);
+                        return RedirectToAction("Index", "Home");
                     }
                     else { ModelState.AddModelError("", "注册失败！"); }
                 }
             }
             return View(register);
+        }
+
+        public ActionResult Login(string returnUrl)
+        {
+            return View();
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Login(LoginModel loginModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var _user = userService.Find(loginModel.UserName);
+                if (_user == null) ModelState.AddModelError("UserName", "用戶不存在");
+                else if (_user.PassWord == Common.Security.Sha256(loginModel.PassWord))
+                {
+                    _user.LoginTime = DateTime.Now;
+                    _user.LoginIP = Request.UserHostAddress;
+                    userService.Update(_user);
+                    var _identity = userService.CreateIdentity(_user, DefaultAuthenticationTypes.ApplicationCookie);
+                    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                    AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = loginModel.RememberMe }, _identity);
+                    return RedirectToAction("Index", "Home");
+                }
+                else ModelState.AddModelError("Password", "密码错误");
+            }
+            return View();
+        }
+
+        #region 属性
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
+        #endregion
+
+        public ActionResult Logout()
+        {
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return Redirect(Url.Content("~/"));
         }
     }
 }

@@ -16,3 +16,4 @@ F:\Project\MVCPratice\Luna\Luna\Luna.Models\bin\Debug\EntityFramework.xml
 F:\Project\MVCPratice\Luna\Luna\Luna.Models\bin\Debug\EntityFramework.SqlServer.xml
 F:\Project\MVCPratice\Luna\Luna\Luna.Models\obj\Debug\Luna.Models.dll
 F:\Project\MVCPratice\Luna\Luna\Luna.Models\obj\Debug\Luna.Models.pdb
+F:\Project\MVCPratice\Luna\Luna\Luna.Models\obj\Debug\Luna.Models.csprojResolveAssemblyReference.cache

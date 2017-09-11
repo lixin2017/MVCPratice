@@ -2,3 +2,8 @@ F:\Project\MVCPratice\LunaPlan\LunaPlan\Common\bin\Debug\Common.dll
 F:\Project\MVCPratice\LunaPlan\LunaPlan\Common\bin\Debug\Common.pdb
 F:\Project\MVCPratice\LunaPlan\LunaPlan\Common\obj\Debug\Common.dll
 F:\Project\MVCPratice\LunaPlan\LunaPlan\Common\obj\Debug\Common.pdb
+F:\Project\MVCPratice\Luna\Luna\Common\bin\Debug\Common.dll
+F:\Project\MVCPratice\Luna\Luna\Common\bin\Debug\Common.pdb
+F:\Project\MVCPratice\Luna\Luna\Common\obj\Debug\Luna.Common.csprojResolveAssemblyReference.cache
+F:\Project\MVCPratice\Luna\Luna\Common\obj\Debug\Common.dll
+F:\Project\MVCPratice\Luna\Luna\Common\obj\Debug\Common.pdb

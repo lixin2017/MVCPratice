@@ -43,9 +43,8 @@ namespace Luna.Models
 
         [Column(TypeName = "DateTime2")]
         public DateTime LoginTime { get; set; }
-
-        [Column(TypeName = "DateTime2")]
-        public DateTime LoginIP { get; set; }
+       
+        public string LoginIP { get; set; }
 
 
 

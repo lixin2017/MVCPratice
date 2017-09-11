@@ -28,3 +28,6 @@ F:\Project\MVCPratice\Luna\Luna\Luna.BLL\bin\Debug\EntityFramework.xml
 F:\Project\MVCPratice\Luna\Luna\Luna.BLL\obj\Debug\Luna.BLL.csprojResolveAssemblyReference.cache
 F:\Project\MVCPratice\Luna\Luna\Luna.BLL\obj\Debug\Luna.BLL.dll
 F:\Project\MVCPratice\Luna\Luna\Luna.BLL\obj\Debug\Luna.BLL.pdb
+F:\Project\MVCPratice\Luna\Luna\Luna.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+F:\Project\MVCPratice\Luna\Luna\Luna.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+F:\Project\MVCPratice\Luna\Luna\Luna.BLL\bin\Debug\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll

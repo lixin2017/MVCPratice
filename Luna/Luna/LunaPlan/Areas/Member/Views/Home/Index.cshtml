@@ -1,11 +1,11 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "会员中心";
 }
 
 <h2>欢迎你 @User.Identity.Name</h2>
 
-<div>
-    <img id="verificationcode" title="点击刷新" src="@Url.Action("VerificationCode")" style="cursor:pointer" />
 
-</div>
+@using (Html.BeginForm("Logout", "User"))
+{
+    <input type="submit" value="登出" />
+}
