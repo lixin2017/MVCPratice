@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luna.Web", "LunaPlan\Luna.Web.csproj", "{6ED874E3-5E4B-4521-8E6A-94EB8F41D157}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luna.web", "LunaPlan\Luna.web.csproj", "{6ED874E3-5E4B-4521-8E6A-94EB8F41D157}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luna.Common", "Common\Luna.Common.csproj", "{F78BAC5B-D5EE-4F60-A9A5-C7D96497F25C}"
 EndProject

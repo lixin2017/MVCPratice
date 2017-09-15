@@ -5,18 +5,18 @@
     {
         @Html.AntiForgeryToken()
 
-        @*<ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
             <li>
-                "你好 "  @User.Identity.Name
+                @Html.ActionLink("你好 " + @User.Identity.Name, "Details", "User", routeValues: new { Area = "Member" }, htmlAttributes: new { id = "DetailsLink" })
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
-        </ul>*@
+        </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("注册", "Register", "User", routeValues: new { Area = "Member" }, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("登录", "Login", "User", routeValues: new { Area = "Member" }, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink("登录", "Login", "User", routeValues: new { Area = "Member", returnUrl = Url.Action("Index", "Home") }, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }

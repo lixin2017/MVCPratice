@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Luna.Common;
-using System.Drawing;
+﻿using Luna.Areas.Member.Models;
 using Luna.BLL;
-using Luna.Areas.Member.Models;
+using Luna.Common;
+using Luna.IBLL;
 using Luna.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
-using Luna.IBLL;
+using System;
+using System.Drawing;
+using System.Web;
+using System.Web.Mvc;
 
 
 
@@ -101,7 +99,7 @@ namespace Luna.Areas.Member.Controllers
         [ValidateAntiForgeryToken]
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Login(LoginModel loginModel)
+        public ActionResult Login(LoginModel loginModel,string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -115,6 +113,8 @@ namespace Luna.Areas.Member.Controllers
                     var _identity = userService.CreateIdentity(_user, DefaultAuthenticationTypes.ApplicationCookie);
                     AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
                     AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = loginModel.RememberMe }, _identity);
+                    if (string.IsNullOrEmpty(returnUrl)) return RedirectToAction("Index", "Home");
+                    else if (Url.IsLocalUrl(returnUrl)) return Redirect(returnUrl);
                     return RedirectToAction("Index", "Home");
                 }
                 else ModelState.AddModelError("Password", "密码错误");
