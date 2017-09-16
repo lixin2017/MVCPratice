@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "UserList";
+}
+
+<h2>UserList</h2>
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.UserName</li>
+        }
+    </ul>
+</div>
+

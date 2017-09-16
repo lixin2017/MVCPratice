@@ -189,6 +189,7 @@
     <Content Include="Areas\Member\Views\User\Details.cshtml" />
     <Content Include="Areas\Member\Views\Shared\UserGroup.cshtml" />
     <Content Include="Views\Shared\LoginPartial.cshtml" />
+    <Content Include="Areas\Member\Views\User\UserList.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

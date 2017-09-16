@@ -173,5 +173,13 @@ namespace Luna.Areas.Member.Controllers
             return View("Details", _user);
 
         }
+
+        public ActionResult UserList()
+        {
+            int totalRecord;
+            var list = userService.FindPageList(1, 10,out totalRecord,0);           
+            ViewBag.totalRecord = totalRecord;
+            return View(list);
+        }
     }
 }
